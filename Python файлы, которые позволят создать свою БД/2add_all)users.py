@@ -3,19 +3,19 @@ import pandas as pd
 
 # Конфигурация подключения к MySQL
 db_config = {
-    'host': 'localhost',         # Ваш хост (обычно localhost)
-    'user': 'root',              # Имя пользователя MySQL
-    'password': '',              # Пароль от MySQL
-    'database': 'Akila',         # Название базы данных
-    'charset': 'utf8mb4'         # Кодировка
+    'host': 'localhost',         
+    'user': 'root',              
+    'password': '',              
+    'database': 'Akila',         
+    'charset': 'utf8mb4'        
 }
 
 # Путь к Excel-файлу
-excel_file = "WhiteList/ТаблицаИгроковWL.xlsx"  # Замените на путь к вашему файлу
+excel_file = "WhiteList/ТаблицаИгроковWL.xlsx" 
 
 try:
     # Чтение данных из Excel в DataFrame
-    df = pd.read_excel(excel_file, sheet_name="Список")  # Лист с данными
+    df = pd.read_excel(excel_file, sheet_name="Список")  
 
     # Переименовываем столбцы для удобства
     df = df.rename(columns={"C-Key": "ckey", "Discord": "discord_name"})
